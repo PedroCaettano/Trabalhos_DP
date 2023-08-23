@@ -1,0 +1,36 @@
+//Anotações feitas na dp do felipe dia 23/08/23
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct Pessoa{
+string nome;
+int idade;
+float salario;
+};
+
+// struct Endereco{
+
+//string Rua;
+//int número
+
+//}
+
+int main(){
+//Pessoa aluno1, aluno2 = {"João Pedro,28, 1000.0"};
+//aluno1 = aluno2;
+Pessoa vet[100];
+
+// Há compiladores que permitem usar o uso do typedef, já outros não
+
+for (int i=0;i<100;i++){
+getline(cin, vet[i].nome);
+ cin>>vet[i].idade;
+ cin>>vet[i].salario;
+
+}
+
+return 0;
+};
+
