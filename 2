@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main(){
+
+//criando um gerador de números aleatórios
+srand(time(NULL));
+int matriz[5][5];
+const int tamanho = 5;
+
+// Preenchendo matriz com os valores requisitados
+std::cout << "Por favor, digite os valores da matriz:\n";
+for (int i = 0; i <tamanho; i++){
+for (int j = 0; j < tamanho; j++){
+    std::cout << "Insira um valor para a posição [" << i << "][" << j << "]";
+    std::cin >> matriz[i][j];
+}
+}
+int maiorValor = matriz[0][0];
+int linhaMaiorValor = 0;
+int colunaMaiorValor = 0;
+
+// Procurando um valor maior e sua localização.
+int max_value = matriz[0][0];
+int max_row = 0;
+int max_col = 0;
+for (int i = 0; i < 5; i++){
+for(int j = 0; j < 5; j++) {
+    if(matriz[i][j] > maiorValor){
+       maiorValor = matriz[i][j];
+       linhaMaiorValor = i;
+       colunaMaiorValor = j;
+    }
+}    
+}
+
+// Mostrar o resultado
+    std::cout << "O maior valor encontrado na matriz é " << maiorValor << " na posição [" << linhaMaiorValor << "][" << colunaMaiorValor << "].\n";
+
+    return 0;
+}
