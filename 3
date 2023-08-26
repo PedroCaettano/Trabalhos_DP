@@ -1,0 +1,50 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+
+int main() {
+srand(time(NULL));
+int matriz[3][3];
+
+//Gerando matrizes com valores aleatórios
+for(int i =0; i < 3; i++){
+for(int j = 0; j < 3; i++){
+matriz[i][j] = rand() %100;
+
+}
+
+}
+
+cout<<"O valor da Matriz é: "<<endl;
+for (int i = 0; i <3; i++){
+for(int j = 0; j < 3; j++){
+cout<< matriz[i][j]<< "";    
+}    
+cout << endl;
+}
+
+//Encontrando a soma dos elementos da diagonal principal
+int somaDiagonalPrincipal = 0;
+for (int i = 0; i < 3; i++){
+    somaDiagonalPrincipal += matriz[i][i];
+}
+
+//Encontrando o maior elemento da diagonal secundária
+int maiorDiagonalSecundaria = matriz[0][2];
+for(int i = 1; i < 3; i++){
+int j = 2 - i;
+if (matriz[i][j] > maiorDiagonalSecundaria){
+                   maiorDiagonalSecundaria = matriz[i][j];    
+}
+}
+
+// Mostra os resultados
+cout << "Soma da diagonal principal: " << somaDiagonalPrincipal << endl;
+ cout << "Maior elemento da diagonal secundária: " << maiorDiagonalSecundaria << endl;
+    
+    return 0;
+
+}
