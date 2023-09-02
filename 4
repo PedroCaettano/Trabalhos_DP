@@ -1,0 +1,67 @@
+// Neste arquivo encontra-se presente os exercicios presentes na atividade 3 do trbalho da DP. 
+// Fiz tudo junto pois me pareceu lógico em minha cabeça.
+// As anotações presentes no código é para eu não me esquecer do que cada comando de código faz
+
+#include <fstream>
+#include <string>
+#include <iostream>
+
+
+using namespace std;
+
+// Definindo os valores presentes nos dados do aluno
+struct DadosAlunos{
+float media;
+int idade;
+
+};
+
+// Procedimento criado para coletar dados dos alunos
+void coletarDadosAlunos(DadosAlunos & aluno) {
+std::cout<< "Digite a média do aluno: " << endl;
+cin >> aluno.media;
+
+std::cout << "Digite a idade do aluno selecionado" << endl;
+cin >> aluno.idade;
+}
+
+int main(){
+// criando uma varíavel para DadosAluno
+DadosAlunos aluno;
+
+// procedimento usado para coletar os dados desses alunos
+coletarDadosAlunos(aluno);
+
+
+std::cout << "Média do aluno: " << aluno.media << std::endl;
+std::cout << "Idade do aluno: " << aluno.idade << std::endl;
+
+const int numAlunos = 10; // Quantidade do Número de Alunos
+DadosAlunos alunos [numAlunos]; // Vetor usado para a  estruturas dos Alunos
+
+// Comando para chamar u, loop que  coletar os dados dos 10 alunos
+    for (int i = 0; i < numAlunos; i++) {
+          std::cout << "\nDigite os dados do aluno " << i + 1 << ":\n" << endl;
+        coletarDadosAlunos(alunos[i]);
+    }
+
+// Exibindo os dados dos 10 alunos
+std::cout << "\nDados dos Alunos:\n";
+for (int i = 0; i < numAlunos; i++){
+ std::cout << "Aluno " << i + 1 << " - Média: " << alunos[i].media << ", Idade: " << alunos[i].idade <<endl;
+}
+
+// Comando usados para verificar se os arquivos foram abertos com sucesso ou não
+std::ofstream outFile("alunos.txt");
+if(!outFile){
+cerr << "Apresenta algum erro ao abrir o arquivo para modificação" << endl;
+return 1;
+}
+
+
+outFile.close();
+
+std::cout << "\nDados dos alunos foram gravados no arquivo 'alunos.txt'." << std::endl;
+
+    return 0;
+}
