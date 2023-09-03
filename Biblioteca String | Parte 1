@@ -1,0 +1,63 @@
+// Parte 1
+
+//Anotações
+// Implementa a classe string
+// Posso passar uma instrução para dentro do objeto graças a String
+//Iterator e outras funções
+// Informações tiradas do CFBCursos
+
+#include <iostream>
+#include <string> // Biblioteca que possui as definições do tipo string
+// Implementa as definições da classe string
+
+using namespace std;
+
+int main(){
+
+string txt("CFB Cursos - Cursos de C++");
+string::iterator it;
+
+it = txt.begin();
+cout << *it << endl;
+
+// outra forma de atribuir valores:
+// txt = "Bruno";
+//cout << txt << endl;
+
+// begin: retorna o iterator diretamente para o primeiro item apontado pela string
+// end: retorna o iterator diretamente para o ´ltimo item apontado pela string
+// o Final do the end é o terminador
+
+// itens que trabalham com o reverse_iterator
+//rbegin: aponta para o final
+//rend: Aponta para o inicio
+
+// dois possíveis comandos para o tamanho do texto
+cout << txt.size() << endl;
+cout << txt.length() << endl;
+
+
+// MaxSize retorna o valor máximo que a String pode ter.
+cout << txt.max_size() << endl;
+// ReSize altera o tamanho da String
+txt.resize(10);
+// Função capacity: Retorna o tamanho de espaço alocado para a String.
+cout << txt.capacity() << endl;
+
+// Clear: Limpa tudo o que está na string
+cout << txt << endl;
+txt. clear();
+cout << txt << endl;
+
+// Empty: faz uma verificação true e false
+if(txt. empty()){
+cout << "String vazia" << endl;
+}else{
+cout << txt << endl;
+}
+
+txt.shrink_to_fit(); //reduz o tamanho que a string está ocupando
+
+return 0;
+
+}
