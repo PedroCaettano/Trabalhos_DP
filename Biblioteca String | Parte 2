@@ -1,0 +1,68 @@
+// Parte 2
+// estudando hoje a biblioteca cstring
+
+#include <iostream>
+#include <cstring> //string.h
+//a biblioteca cstring possui funções para manipular outras strings
+
+
+int main(){
+// copia uma string de origem para uma string de destino
+char txt1[50] = "Curso de Programação";
+char txt2[50] ="";
+
+strcpy(txt2, txt1); // Comando que copia uma string de origem para uma string de destino
+// uma outra variação. Essa indica quantos outros valores podemos copiar:
+strncpy(txt2, txt1); // indica quantos caracteres queremos copiar
+cout << txt2 << endl;
+
+// outra variação de strncpy:
+memcpy(txt2, txt1, sizeof(txt1)+1); // Copia o bloco de memória
+
+// comando que concatena dois comandos a uma string:
+strcat(txt," - CFB Cursos" );
+strncat (txt1, txt2,6 ); // Espefico quantos caracteres quero fazer a concatenação 
+
+// comando que faz comparação entre duas strings:
+res=strncmp(txt1,txt2);
+if(res==0){
+cout << "iguais" << endl;
+}else{
+cout << "diferentes" << endl;
+
+}
+
+/*
+0 = iguais
+>0 = 1 maior 2 
+<0 = 2 maior 1
+*/
+
+cout << txt << endl;
+
+    return 0;
+}
+
+// Parte 2.5
+
+
+#include <iostream>
+#include <cstring>
+
+ 
+using namespace std;
+
+struct {
+char nome[40];
+
+}pessoa1.pessoa2;
+
+int main(){
+char meunome[] = "Bruno";
+
+memcpy(pessoa1.nome, meunome, strlen(meunome)+1);
+memcpy(pessoa2.nome, pessoa1.nome,sizeof(pessoa1. nome)+1);
+cout << pessoa2.nome << endl;
+
+    return 0;
+}
