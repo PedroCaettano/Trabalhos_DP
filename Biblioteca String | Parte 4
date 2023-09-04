@@ -1,0 +1,58 @@
+// Parte 4
+// Acesso a elementos e funções modificadoras
+string txt ("Lapa da Barata.com");
+int tam = txt.size();
+
+for (int = i = 0;i<tam; i++){
+cout << txt[i];
+
+// Funções para referênciar objetos:
+// função altenativa
+cout << txt.at(i); //retorna o elemento na posição indicado
+
+// função back
+cout << txt.back(); // Retorna uma referência a um último elemento da string
+txt.back () ='P';
+
+txt.front() = 'P'; // // Retorna uma referência a um primeiro elemento da string
+cout << txt.front() << endl;
+
+// Funções modificadoras:
+string txt ("Pedrão Cursos");
+txt+= =" - Lapa da barata"; // Aqui estou substituindo o conteúdo presente na string acima. Ele pode adicionar algo a string
+// comando para anexar a string:
+txt.append(" - Moranguinho surfista.com") // O que anexado aqui, pode ser concatenar um novo conteúdo para uma string
+cout << txt << endl;
+
+// Pushback: Adiciona um conteúdo para o final da string
+txt.push_back('B');
+//PopBack: Remove o último carácter da string
+txt.pop_back('O')
+// Função assign:
+txt.assign" Curso de C++";
+}
+cout << endl;
+
+// função insert: insere uma posição na string de maneira especifica
+txt.append("Mosquitão");
+txt.insert(3, " - ");
+
+// erase: remove determinado parametro dentro de uma string
+txt.erase(5,2); // posição inicial e quantidade de elementos que ele vai apagar
+
+// replace:
+string txt("A barata josuke higashikata");
+string txt2 = "Jojolion"
+txt.replace(11, 3, txt2); // o ponto inicial, a quantidade de elementos, e o que você quer substituir
+
+// swap: Troca de função entre strings:
+string txt1("Curso");
+string txt2 = "Aula";
+
+txt.swap(txt2);
+
+cout << txt1 << endl;
+cout << txt2 << endl;
+
+
+
