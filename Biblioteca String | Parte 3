@@ -1,0 +1,75 @@
+// Parte 3 
+// biblioteca cstring
+
+//colocar o #include <cstring> antes de tudo
+//memchr: localiza determinado caracter dentro do bloco de memória onde está a string
+char * text1;
+char txt2[] = "CFB Cursos"
+char pesquisa = 'B';
+
+txt1 = (char*)memchr (txt2, pesquisa,strlen(txt2));
+if(txt1! = NULL) {
+cout << "Letra" << pesquisa << "encontrada na posicao: " txt1-txt2+1 << endl;
+}else{
+
+cout << "Letra" << pesquisa << "nao encontrada " << endl; 
+}
+
+///////////////////////////////////
+//Função de pesquisa: strchr
+//strchr: localiza a primeira ocorrência de determinado carácter dentro de uma string
+
+char txt[] = "CFB Cursos";
+char * c;
+char pesquisa = 'C';
+
+c=strchr(txt,pesquisa );
+cout << "Pos" << c-txt;
+
+// strcspn
+// Localiza dentro de uma string, uma chave que podemos especificar. Isso podendo ser uma série de carácteres
+
+char txt[] = "Chapa do Ratao.com"
+char chave[] = "rcp";
+int i; 
+
+i = strcspn(txt,chave);
+cout << "Pos:" << i << endl;
+// para imprimeir o elemento na strcspn:
+cout << "Pos: " << i << " - " << txt[i] << endl;
+
+//////////////////////////////////////////
+// strrchr
+// localiza o último elemento localizado dentro de uma string
+char txt[] = "Blog da Moranguinho.com"
+char * c;
+char pesquisa='o';
+
+c = strrchr(txt, pesquisa);
+cout << "pos: " << c-txt << endl;
+
+//////////////////////////////////
+// strtok
+// divide a string em vários indicadores que podemos informar
+
+char txt[] = "Chupeta de Baleia - Netvirtua/com"
+char * c;
+char chave[] = ",-./";
+// podemos usar tbm, uma variável mais direta
+c=strtok(txt, ",-");
+while(c!NULL){
+cout << c << endl;
+c=strtok(NULL, ", -");
+}
+
+c = strtok(txt, "");
+
+/////////////////////////////////////
+//strlen
+// retorna o tamanho de uma string
+
+char txt[] = "Na Rede do Mosquitão - Motos e Acessórios";
+int tam;
+
+tam = strlen(txt);
+cout << tam << endl;
