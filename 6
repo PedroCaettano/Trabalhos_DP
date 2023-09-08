@@ -1,0 +1,31 @@
+// 2. Faça uma função que receba uma frase e, a cada ocorrência da palavra TECLADO, insira
+//o texto OU MOUSE
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+std::string substituirPalavra(std::string frase, const std::string& palavraAlvo, const std::string& palavraSubstituta) {
+    size_t pos = frase.find(palavraAlvo);
+    while (pos != std::string::npos) {
+        
+    frase.replace(pos, palavraAlvo.length(), palavraSubstituta);
+    pos = frase.find(palavraAlvo, pos + palavraSubstituta.length());
+    }
+
+    return frase;
+}
+
+int main(){
+
+string sentence;
+cout << "Digite uma Frase: " << endl;
+getline (cin, sentence);
+
+string sentenceWithSubstitutions = changeWords(sentence);
+sentenceWithSubstitutions = substituirPalavras(sentenceWithSubstitutions);
+
+cout << "Frase com substituições: " << sentenceWithSubstitutions << endl;
+
+    return 0;
+}
