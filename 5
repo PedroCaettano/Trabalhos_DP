@@ -1,0 +1,38 @@
+//1. Faça uma função que receba uma frase e troque a palavra ALUNO por ESTUDANTE e a
+//palavra ESCOLA por UNIVERSIDADE
+
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+
+std::string changeWords(string frase) {
+
+size_t pos = frase.find("ALUNO");
+while (pos != std::string::npos) {
+
+ frase.replace(pos, 5, "ESTUDANTE");
+pos = frase.find("ALUNO", pos + 1);
+
+}
+
+pos = frase.find("ESCOLA");
+    while (pos != std::string::npos) {
+
+    frase.replace(pos, 6, "UNIVERSIDADE");
+    pos = frase.find("ESCOLA", pos + 1);
+    }
+
+    return frase;
+}
+
+
+int main(){
+std::string frase;
+cout << "Digite uma Frase: " << endl;
+std::getline(std::cin, frase);
+
+std::string novaFrase = changeWords(frase);
+cout << "Frase com substituições: " << novaFrase << endl;
+
+}
