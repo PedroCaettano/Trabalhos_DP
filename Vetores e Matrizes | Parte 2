@@ -1,0 +1,52 @@
+// Array e Vetor
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+// Podemos indicar o tamanho do vetor também dessa forma
+int tam =5;
+int vetor[tam];
+int i;
+
+// podemos declarar o array e seus elementos de uma outra forma tbm.
+// isso é feito da seguinte forma
+// fácil rápido e curto
+int vetor[5]={10,20,30,40,50};
+int i;
+
+// após acionarmos, só precisamos inserir o seguinte código:
+for (i =0; i<sizeof(vetor)/4; i++){
+    cout << vetor[i] "\n";
+}
+
+    int vetor[5];
+    // seria parecido com isso aqui: int vetor0, vetor1, vetor2....
+
+    vetor[0] = 10; // Adicionando valores a um array
+    vetor[1] = 20;
+    vetor[2] = 30;
+    vetor[3] = 40;
+    vetor[4] = 50;
+
+// Comandos que sugerem todos os valores de array
+    for(i = 0; i<5; i++){
+    cout <<vetor [0] << "\n"; // mostra os valores adicionados a um determinado vetor
+    // cout << vetor [5] << "\n" // LIXO! Pode gerar um erro muito grave. evite!
+
+    // O que podemos usar para ler os vetores instalados acima>
+    // O Comando For
+    cout << vetor [i] << "\n"; // comando correto a ser executado
+}
+
+// tenha cuidado com sizeof. Pode ele pode me indicar o tamanho em BYTES do arquivo
+// para evitar a dor de cabeça, faça:
+// obs: O limitador for pode ser usado várias vezes mesmo se o valor dos vetores tenha sido aumentado
+for(i =0 i<sizeof(vetor)/4; i++){
+    cout << vetor[i] << "\n";
+}
+    return 0;
+}
+
