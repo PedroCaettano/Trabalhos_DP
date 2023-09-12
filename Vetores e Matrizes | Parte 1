@@ -1,0 +1,33 @@
+//Dedicado para Vetores e Matrizes
+
+// array
+// conjunto de elementos que precisam ser do mesmo tipo
+// relacionados matrizes e vetores.Vetor é array de uma dimentsão e vetores tem mais direções
+
+// declarado ao uso do uso de colchetes
+// o indice é 0. O 0 tbm faz parte deles
+// o zero faz parte e inicia-se com ele
+
+// código abaixo em c++
+using system
+
+namespace Array{
+class Program{
+static string [] semana = new string[7];
+static void Main(string[] args){
+    semana[0] = "Domingo";
+    semana[1] = "Segunda";
+    semana[2] = "Terça";
+    semana[3] = "Quarta";
+    semana[4] = "Quinta";
+    semana[5] = "Sexta";
+    semana[6] = "Sabádo";
+
+   // Console.WriteLine(semana[]); // Comando para acessar qualquer dia da semana
+    foreach (string dia in semana){
+        Console.WriteLine(dia);
+    }
+}
+}
+
+}
