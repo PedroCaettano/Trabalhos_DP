@@ -1,0 +1,75 @@
+
+//Vou colocar as respostas aqui:
+//1 - Tabuleiro envolvendo números randomicos
+
+//1 - A) Apenas 1: A {1,2}
+
+//2 - Matriz nxn resultando na maior e menor temperatura
+
+//2 - A) 
+float min,
+Float temp [n] [n];
+Min = temp [0][0]
+For(int i =0, i<n.i++){
+
+For(int i = 0; i<n, i++){
+For(int j = 0, i<n, j++){
+
+If(temp[i][j]<min){
+Min = temp[i][j];
+
+}
+
+}
+Cout << min << endl;
+
+
+//B)
+
+Float max, 
+Max = temp[n][n];
+For( int i = 0, i<n, i++){
+For(int j = 0, j<n, j++){
+
+If(temp[i][j]>max){
+Max = temp[i][j];
+
+}
+}
+Cout << max << endl;
+
+//3 - Linguagem c++ Acerto e erro
+(envolvendo caso base e condição de parada)
+
+//3 - 1 verdadeira 2 falsa
+
+//4 - String Clássica. Envolvendo vetores
+
+//4 - Char str [20] - Possui posições do 0 até 0 19
+- o \0 conta a partir das barras duplas “”
+ 
+//R: String 8 
+
+//5 -  Dimensão nxn A e B
+
+//R: a)
+int A[n][n];
+ Int B[n][n];
+
+For (int i = 0; i<n; i++);
+For (int j = 0; j<n; j++);
+
+Cin >> A[i][j]; //cin >>B[i][j] >> cout [i][j];
+}
+}
+
+// R: b) 
+int C[n][n]
+
+For (int i = 0; i<n; i++); {
+For (int j = 0; j<n: j++); }
+Else{
+C[i][j] = B[i][j];
+}
+}
+
