@@ -1,0 +1,53 @@
+//Trabalho5.cpp
+// ENUNCIADO: Imagine que você trabalha em um grande armazém de uma empresa de logística. O
+//armazém contém uma variedade de produtos e ativos que precisam ser rastreados e
+//monitorados regularmente. Para facilitar esse processo, há um sistema de
+//rastreamento que utiliza coordenadas x e y para representar a posição dos ativos no
+//armazém.
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+struct Asset {
+    string id;
+    int x, y;
+}
+
+void preencherCoordenadas(Asset ativos[], int n){
+     int posicaoX = 0;
+     int posicaoY = 0;
+
+for(int i = 0; i < n; i++ ){
+    ativos[i].x = posicaoX;
+    ativos[i].y = posicaoY;
+
+    // Atualização das coordenadas
+    posicaoX++;
+    if(posicaoX >= 10) {
+       posicaoX = 0;
+       posicaoY++; 
+
+       }
+
+    }
+}
+
+int main() {
+
+const int n = 50; // Número que estabelecido pelos ativos
+Asset ativos [n];
+
+preencherCoordenadas(ativos, n);
+for (int i = 0; i < n; i++){
+     ativos[i].id = "Asset_" + to_string(i +1);
+
+}
+
+// Imprimindo as coordenadas dos ativos
+for (const auto& asset : ativos){
+     cout <<"Asset ID:" << asset.id << ", X: " << asset,x << ", Y: " << asset.y << endl;
+}
+    return 0;
+}
