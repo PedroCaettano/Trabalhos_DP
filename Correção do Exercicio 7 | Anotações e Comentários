@@ -1,0 +1,36 @@
+//25/10/23
+// OBSERVAÇÃO! O EXERCICIO AQUI É REFERIDO COMO TRABALHO 5, MAS NO GITHUB ELE É REFERIDO AQUI COMO "7"
+// OBSERVAÇÃO! DAR UMA BOA REVISADA EM ALOCAÇÕES DINÂMICA
+
+
+// como poderiamos ter feito o trabalho dessa semana? - Trabalho 5
+// Comentários e anotações:
+
+//EP5.CPP
+#include <iostream>
+using namespace std;
+
+// função para preencher as coordenadas X e Y do vetor de um produto.
+void PreencheCoordenadas(Produto * Ativos,int n){
+     srand(time(0));
+     for (int i = 0; i < n; i++){
+          (Ativos+i)->x = rand()/99; //Ativos[i].x = 99 // Referência direta 
+          (Ativos+i)->y = rand()/99; //Ativos[i].y = 99 // 
+          // Como acesso o campo de uma struct com um ponteiro? É atráves do tracinho
+     }
+}
+
+struct Produto{
+    int x;
+    int y;
+    // mais infos sobre cada produto (nome,id...)
+};
+typedef struct Produto Produto;
+
+int main(){
+
+int n = 8;
+// NÃO FAÇA ISSO AQUI: cin >> n;
+Produto Ativos[n]; // N não pode ser alterado. Ele não pode ser usado com Cin
+
+}
