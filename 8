@@ -1,0 +1,51 @@
+// Trabalho 6
+// Enunciado do trabalho: Alocar uma matriz dinamicamente, conforme dimensões definidas pelo usuário e realizar
+// as operações a seguir:
+
+//Somar todos os elementos da matriz.
+//Liberar a memória alocada pela matriz.
+
+// "Uma Boa Prática." - Felipe
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+int linhas, colunas;
+std::cout << "Insira o número de linhas: ";
+std::cin >> linhas;
+
+std::cout << "Insira o número de colunas: ";
+std::cin >> colunas;
+
+int** matrix = new int*[linhas];
+for (int i = 0; i < linhas; i++) {
+     matrix[i] = new int[colunas];
+}
+
+std::cout <<"Por favor, insira os elementos da matrix: ";
+     for (int i = 0; i < linhas; i++){
+          for(int j = 0; j < colunas; j++){
+              std::cin >> matrix[i][j];
+          }
+     }
+
+// Adicionando os elementos presentes na matrix
+int soma = 0
+for (int i = 0; i < linhas; i++ ) {
+     for (int j = 0; j < colunas; j++) {
+          sum += matrix[i][j];
+     }
+}
+std::cout << "Somando todos os elementos da matrix: " << soma << std::endl;
+
+// Liberando a alocação de memória dentro da Matrix
+   for (int i = 0; i < colunas; i++) {
+    delete[] matrix[i];
+
+   }
+   delete[] matrix;
+
+    return 0;
+}
