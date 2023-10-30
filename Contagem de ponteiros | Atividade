@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+// Função para calcular o tamanho de uma string
+
+unsigned int tamanhoString ( char * str) {
+         char* inicio = str;
+
+while (*str! = '\0'){
+        str++;
+}
+
+int main(){
+char *minhaString = "qualquer coisa";
+unsigned int tamanho = tamanhoString (minhaString);
+cout << "O tamanho da String é: " << tamanho << endl
+
+}
