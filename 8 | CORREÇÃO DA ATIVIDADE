@@ -1,0 +1,73 @@
+// correção do exercicio da semana passada:
+
+// "Uma Boa Prática - Felipe"
+#include <iostream>
+using namespace std; // Dificilmente vamos usar isso aqui em códigos comerciais 
+
+// retornando o ponteiro da matriz
+int ** aloca_matriz(int linhas, int colunas){
+int **m;
+      m = new int*[linhas];
+      if (m == NULL) {
+          cout << "Falha na alocação de memoria. Encerrando..." << endl;
+          exit(1); // abort
+      }else{
+          for(int i = 0;i < linhas; i++){
+              m[i] = new int[colunas];
+              if(m[i] == NULL)
+              cout << "Falha na alocação de memoria. Encerrando..." << endl;
+              exit(1); // abort
+
+          }
+      }
+      return m;
+}
+
+void preenche_matriz(int **matriz, int linhas, int colunas){
+    srand(time(0));
+        for (int i = 0; i < linhas; i++){
+        for (int j = 0; j < colunas; j++){
+             matrix[i][j] = rand()%100; 
+        }
+    }
+}
+
+long int soma_elementos(int **matriz, int linhas, int colunas){
+         long int resultado = 0;
+         for (int i = 0; i<linhas; i++){
+         for (int j = 0; j<colunas; j++ ){
+              resultado = resultado + matriz[i][j]
+              }
+
+         }
+         return resultado; 
+}
+
+void desaloca_matriz(int **matriz, int linhas, int colunas) {
+    for (int i = 0; i < linhas; i++ ){
+         delete[] matriz[i];
+    } 
+    delete [] matriz;
+}
+
+// se não fossemos usar o nomespace std; deveriamos usar o std::cout<<
+
+int main(){
+    // recebendo a quantidade de linhas e colunas do tipo inteiro
+    int linhas, colunas
+    cout <<"Digite a quantidade de linhas da matriz: "<<endl;
+           cin >> linhas;
+    cout <<"Digite a quantidade de coluns da matriz: "<<endl;
+           cin >> colunas;
+
+    // incluindo o ponteiro de nível dois. Usamos isso para apontar para outro ponteiro
+    int **matriz;
+    matriz = aloca_matriz(linhas, colunas);
+    preenche_matriz (matriz, linhas, colunas);
+    cout << "Resultado da soma dos elementos; " ;
+    cout << soma_elementos(matriz, linha, colunas);
+    desaloca_matriz(matriz, linhas, colunas);
+
+
+return 0;
+}
