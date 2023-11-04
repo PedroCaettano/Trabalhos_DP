@@ -1,0 +1,78 @@
+//Atividade 7 de Técnicas de programação
+
+// ENUNCIADO:  Crie uma função que receba como parâmetros dois vetores de inteiros: x1
+//e x2 e as suasrespectivas quantidades de elementos: n1 e n2. A função deverá
+//retornar um ponteiro para um terceiro vetor, x3, alocado dinamicamente,
+//contendo a união de x1 e x2 e usar o ponteiro qtd para retornar o tamanho de
+//x3.
+
+ //rascunho do que tem que estar no trabalho
+//* Uniao (){
+// alocar x3
+//fazer a união dos elementos
+// atribit o valor do qtd por ref
+// devolver x3 atráves do retorno da função
+//}
+
+// "Uma Boa Prática." - Felipe
+
+#include <iostream>
+#include <vector>
+
+std::vector<int> uniao(const std::vector<int>& x1, const std::vector<int>& x2, int* qtd) {
+     std::vector<int> x3;
+     int i = 0, j = 0;
+
+while (i < x1.size() && j < x2.size()) {
+        if (x1[i] < x2[j]) {
+        x3.push_back(x1[i]);
+        i++;
+
+        }
+        
+        else if (x2[j] < x1[i]) {
+        x3.push_back(x2[j]);
+        j++;
+
+        }
+
+        else {
+        x3.push_back(x1[i]);
+        i++;
+        j++;
+
+        }
+    }
+
+        while (i < x1.size()) {
+        x3.push_back(x1[i]);
+        i++;
+
+    }
+
+        while (j < x2.size()) {
+        x3.push_back(x2[j]);
+        j++;
+
+    }
+
+        *qtd = x3.size();
+         return x3;
+}
+
+
+int main() {
+   std::vector<int> x1 = {1, 3, 5, 6, 7};
+   std::vector<int> x2 = {1, 3, 4, 6, 8};
+else qtd;
+   std::vector<int> x3 = uniao(x1, x2, &qtd);
+   std::cout << "Tamanho de x3: " << qtr << std::endl;
+   std::cout << "x3: "
+
+for (int i = 0; i < qtd; i++) {
+     std::cout << x3[i] << " ";
+
+}
+   std::cout << std::endl;
+   return 0;
+}
