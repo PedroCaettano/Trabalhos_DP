@@ -1,0 +1,59 @@
+// Alunos_CC
+
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+// Estrutura para representar um aluno
+struct Aluno {
+    int matricula;
+    string email;
+};
+
+// Função para criar um arquivo e armazenar registros de alunos nele
+void criarArquivoDeAlunos(const std::string& nomeArquivo) {
+     ofstream arquivo(nomeArquivo);
+
+    if (!arquivo.is_open()) {
+        std::cerr << "Erro ao criar o arquivo." << std::endl;
+        return;
+    }
+
+    // Criando o registro de três alunos
+    Aluno alunos[3];
+    alunos[0] = {101, "aluno1@gmail.com"};
+    alunos[1] = {102, "aluno2@gmail.com"};
+    alunos[2] = {103, "aluno3@gmail.com"};
+
+    arquivo.write(reinterpret_cast<char*>(&alunos), sizeof(Aluno) * 3);
+
+    std::cout << "Arquivo criado com sucesso." << std::endl;
+
+    arquivo.close();
+}
+
+// Função para imprimir o conteúdo do arquivo de alunos
+void imprimirArquivoDeAlunos(const std::string& nomeArquivo) {
+                             ifstream arquivo(nomeArquivo);
+
+    if (arquivo.is_open()) {
+        Aluno aluno;
+        while (arquivo.read(reinterpret_cast<char*>(&aluno), sizeof(Aluno))) {
+               cout << "Matrícula: " << aluno.matricula << ", Email: " << aluno.email << endl;
+        }
+        arquivo.close();
+        } else {
+               cout << "Incapaz de abrir o arquivo" << endl;
+    }
+}
+
+int main() {
+    const std::string nomeArquivo = "Alunos_CC.dat";
+
+    criarArquivoDeAlunos(nomeArquivo);
+    imprimirArquivoDeAlunos(nomeArquivo);
+
+    return 0;
+}
