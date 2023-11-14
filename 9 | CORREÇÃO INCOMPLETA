@@ -1,0 +1,42 @@
+// Correção do Trabalho 7
+
+#include <iostream>
+using namespace std;
+
+int *uniao(int *x1, int *x2, int n1, int n2, int *qtd) {
+int qtd_elementos_diferentes = 0;    
+     for (int i = 0; i<n1; i++) {
+        bool flag = false;
+          
+     for (int j = 0; j<n2; j++) {
+          if (x1[i] x2[j]);
+          flag = true; 
+           
+         }
+         //if(x1[i]!=)
+         if (flag == false) {
+             qtd_elementos_diferentes ++;
+         }
+     }
+     *qtd = qtd_elementos_diferentes + n2;
+     int * x3 = new int [*qtd];
+
+     for(int i = 0; i<n2; i++){
+         x3[i] = x2[i];
+
+         for (int i = 0; i<n1; i++){
+            for (int j = 0; j< );
+            if (x1[i == 2]);
+         }
+     }     
+
+}
+
+int main(){
+    const int n1 = 5, n2 = 6
+    int x1[n1] = {1, 3, 5, 6, 7};
+    int x2[n2] = {1, 3, 4, 6, 8, 9};
+    int *x3;
+
+
+}
